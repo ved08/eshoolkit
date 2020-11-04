@@ -7,7 +7,6 @@ const Binary = require('mongodb').Binary
 const app = express();
 
 app.use(cors());
-// app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
@@ -30,7 +29,6 @@ app.post('/', (req, res) => {
         let collection =  db.collection(String(req.body.uid))
         // collection.insertOne(insertData)
         collection.find({}).toArray((err, docs) => {
-            // console.log(docs[0].fileData.buffer)
             for(let i = 0; i < docs.length; i++) {
                 fs.writeFileSync(`${i}.jpeg`, docs[i].fileData.buffer, err => {
                     err ? console.log("Error") : console.log("Created image");;

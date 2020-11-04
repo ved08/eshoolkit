@@ -1,7 +1,7 @@
 import firebase from "firebase";
 import "firebase/auth"
 firebase.initializeApp({
-    apiKey: process.env.REACT_APP,
+    apiKey: process.env.REACT_APP_API_KEY,
     authDomain: "store-your-homework.firebaseapp.com",
     databaseURL: "https://store-your-homework.firebaseio.com",
     projectId: "store-your-homework",
