@@ -5,6 +5,7 @@ import HomePage from "./components/HomePage"
 import LandingPage from "./components/LandingPage"
 import Login from "./components/Login/Login"
 import PrivateRoute from "./components/Private/PrivateRoute"
+import NotFoundPage from "./components/404Page/404Page"
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <PrivateRoute component={LandingPage} path="/main" exact/>
         <Route exact path="/" component={HomePage}/>
         <Route exact path="/login" component={Login} />
-        <Route path="*" exact render={() => "404 Not Found"}/>
+        <Route path="*" component={NotFoundPage}/>
         <ul>
           <li><NavLink to="/main">/main</NavLink></li>
           <li><NavLink to="/">/</NavLink></li>

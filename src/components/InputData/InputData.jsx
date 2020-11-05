@@ -31,7 +31,6 @@ const InputData = () => {
             }} style={{width: '100px', height: '100px', backgroundColor:"cyan", textAlign: 'center'}}>
 
             </div>
-            <button>Dummy Button</button>
         </div>
     );
 }
