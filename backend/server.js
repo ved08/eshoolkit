@@ -9,8 +9,26 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json())
 
-app.get('/', (req, res) => {
-    res.send("Port Running")
+app.post('/data', (req, res) => {
+    console.log("Got a request");
+    let bufferData = [];
+    MongoClient.connect("mongodb://localhost:27017/admin", 
+    { useUnifiedTopology: true }, (err, newDb) => {
+        if(err) console.log("error!");
+        const db = newDb.db('eschoolkit');
+        const collection = db.collection(String(req.body.uid));
+        collection.find({}).toArray((err, docs) => {
+            if(err) console.log("ERROR")
+            for(let i = 0; i < docs.length; i++) {
+                // fs.writeFileSync(`${i}.jpeg`, docs[i].fileData.buffer, err => {
+                //     err ? console.log("Error") : console.log("Created image");;
+                // })
+                bufferData.push(docs[i].fileData)
+            }
+            res.send(bufferData)
+        }) 
+        
+    })
 })
 app.post('/', (req, res) => {
     console.log(req.body.base64.slice(20, 30))
@@ -27,14 +45,7 @@ app.post('/', (req, res) => {
         else console.log("Connected to DB")
         let db =  newDb.db("eschoolkit");
         let collection =  db.collection(String(req.body.uid))
-        // collection.insertOne(insertData)
-        collection.find({}).toArray((err, docs) => {
-            for(let i = 0; i < docs.length; i++) {
-                fs.writeFileSync(`${i}.jpeg`, docs[i].fileData.buffer, err => {
-                    err ? console.log("Error") : console.log("Created image");;
-                })
-            }
-        })   
+        // collection.insertOne(insertData)  
     })
 })
 

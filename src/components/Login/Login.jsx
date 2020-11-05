@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { FcGoogle } from "react-icons/fc"
 
 import Auth from "../../auth"
 
@@ -16,7 +17,7 @@ class Login extends Component {
                         this.props.history.push('/main')
                     })
                 }
-                }>Log In with Google</button>
+                }><FcGoogle/> Login with Google</button>
             </div>
         );
     }
