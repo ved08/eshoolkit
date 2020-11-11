@@ -28,7 +28,7 @@ const InputData = () => {
                     console.log(reader.result)
                 }
                 reader.readAsDataURL(fileList[0])
-            }} style={{width: '100px', height: '100px', backgroundColor:"cyan", textAlign: 'center'}}>
+            }} style={{width: '10vw', height: '10vh', backgroundColor:"cyan", textAlign: 'center'}}>
 
             </div>
         </div>

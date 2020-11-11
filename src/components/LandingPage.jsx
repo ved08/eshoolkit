@@ -1,7 +1,8 @@
 import React,  { Component } from 'react';
+import axios from "axios";
 import Auth from "../auth";
 import InputData from "./InputData/InputData";
-import axios from "axios";
+import PopupModal from "./Modal/Modal"
 
 export default class LandingPage extends Component {
     state = {
@@ -28,16 +29,24 @@ export default class LandingPage extends Component {
         this.setState({
             name: data.displayName,
             email: data.email,
-            uid: data.uid
+            uid: data.uid,
+            showModal: false
         })
     }
 
     render() {
-        const images = this.state.loading ? "Wait a sec...Loading" : this.state.base64Data.map((uri, i) => <img src={uri} key={i}/>)
+        const images = this.state.loading ? 
+            "Wait a sec...Loading" : 
+            this.state.base64Data.map((uri, i) => <img style={{
+                width: '140px', height: "75px"
+            }} src={uri} key={i}/>)
         return(
             <div>
                 <h1>Welcome {this.state.name}</h1>
                 <h3>{this.state.email}</h3>
+                <button onClick={() => this.setState({ showModal: true })}>Open Modal</button>
+                <PopupModal show={this.state.showModal}
+                 onHide={() => this.setState({showModal: false})}/>               
                 <InputData />
                 {images}
             </div>

@@ -1,5 +1,6 @@
 import './App.css';
-import { BrowserRouter, NavLink, Route } from "react-router-dom"
+import { BrowserRouter, NavLink, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import HomePage from "./components/HomePage"
 import LandingPage from "./components/LandingPage"
