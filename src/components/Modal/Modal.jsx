@@ -1,4 +1,5 @@
 import { Modal, Button } from "react-bootstrap"
+import InputData from "../InputData/InputData"
 
 const PopupModal = (props) => {
     return (
@@ -14,8 +15,7 @@ const PopupModal = (props) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div style={{height: '50vh'}}>
-          </div>
+          <InputData />
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>
