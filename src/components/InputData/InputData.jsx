@@ -19,7 +19,7 @@ const InputData = () => {
                     console.log(reader.result)
                 }
                 reader.readAsDataURL(fileList[0])
-            }} style={{ height: '50vh', backgroundColor:"cyan", textAlign: 'center'}}>
+            }} style={{ height: '60vh', backgroundColor:"cyan", textAlign: 'center'}}>
                 <label>
                     <input type="file" accept=".jpg .jpeg .png .jfif" onChange={e => {
                         const reader = new FileReader();
