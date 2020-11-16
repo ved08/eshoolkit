@@ -46,8 +46,7 @@ export default class LandingPage extends Component {
                 <h3>{this.state.email}</h3>
                 <button onClick={() => this.setState({ showModal: true })}>Open Modal</button>
                 <PopupModal show={this.state.showModal}
-                 onHide={() => this.setState({showModal: false})}/>               
-                {/* <InputData /> */}
+                 onHide={() => this.setState({showModal: false})}/>
                 {images}
             </div>
         );
