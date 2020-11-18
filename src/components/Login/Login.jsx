@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import { FcGoogle } from "react-icons/fc"
 
 import Auth from "../../auth"

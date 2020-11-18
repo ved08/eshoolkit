@@ -1,3 +1,5 @@
+import React from "react"
+
 import axios from "axios";
 import { useState } from "react";
 import Auth from "../../auth"
@@ -32,7 +34,8 @@ const InputData = () => {
                         }
                         reader.readAsDataURL(e.target.files[0])
                     }} style={{display: 'none'}} />
-                    <a 
+                    <a
+                    href="#" 
                     onMouseEnter={() => setHovered(true)}
                     onMouseLeave={() => setHovered(false)}
                     style={ hovered ? {

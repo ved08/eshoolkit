@@ -1,3 +1,5 @@
+import React from "react"
+
 const ImageContainer = (props) => {
     const handlePopUp = () => {
         

@@ -1,8 +1,8 @@
-import React,  { Component } from 'react';
+import React, { Component } from 'react';
 import axios from "axios";
-import Auth from "../auth";
-import InputData from "./InputData/InputData";
-import PopupModal from "./Modal/Modal"
+import Auth from "../../auth";
+import PopupModal from "../Modal/Modal";
+import Navbar from "./Navbar/Navbar"
 
 export default class LandingPage extends Component {
     state = {
@@ -42,6 +42,7 @@ export default class LandingPage extends Component {
             }} src={uri} key={i}/>)
         return(
             <div>
+                <Navbar />
                 <h1>Welcome {this.state.name}</h1>
                 <h3>{this.state.email}</h3>
                 <button onClick={() => this.setState({ showModal: true })}>Open Modal</button>

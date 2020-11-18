@@ -1,9 +1,10 @@
+import React from 'react'
 import './App.css';
 import { BrowserRouter, NavLink, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import HomePage from "./components/HomePage"
-import LandingPage from "./components/LandingPage"
+import LandingPage from "./components/LandingPage/LandingPage"
 import Login from "./components/Login/Login"
 import PrivateRoute from "./components/Private/PrivateRoute"
 import NotFoundPage from "./components/404Page/404Page"
