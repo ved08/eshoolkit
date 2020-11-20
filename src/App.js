@@ -18,12 +18,12 @@ function App() {
         <PublicRoute restricted={true} component={Login} path="/login" exact />
         <Route exact path="/" component={HomePage}/>
         {/* <Route exact path="/login" component={Login} /> */}
-        <ul style={{marginBottom: 0, padding: 0}}>
+        {/* <ul style={{marginBottom: 0, padding: 0}}>
           <li><h4>The below area is for experimenting. This wont be included in production</h4></li>
           <li><NavLink to="/main">/main</NavLink></li>
           <li><NavLink to="/">/</NavLink></li>
           <li><NavLink to="/login">Login</NavLink></li>
-        </ul>
+        </ul> */}
       </BrowserRouter>
     </div>
   );

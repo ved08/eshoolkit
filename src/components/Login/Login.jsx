@@ -14,54 +14,47 @@ class Login extends Component {
     render() {
         return(
             <div className="Login">
-                <h1>Login</h1>
+                <p className="Login-Page-Title">Login</p>
                 <div className="Third-Party-Auth">
                 <div style={{
                     paddingTop: "40px"
                 }}>
                     <button style={{
                         color: "#757575",
-                        backgroundColor: "white",
-                        padding: 10,
-                        fontSize: "17px",
-                        border: "none",
-                        boxShadow: "0.5px 0.5px 10px 0px grey"
+                        backgroundColor: "white",                                                                                                
                     }} onClick={() => {
                         Auth.loginWithGoogle(() => {
                             this.props.history.push('/main')
                         })
                     }
-                    }><FcGoogle style={{fontSize: 24.5}}/><span style={{marginLeft: "20px"}}/> Login with Google</button>
+                    }><FcGoogle style={{fontSize: 24.5}}/><span/> Login with Google</button>
                 </div>
                 <div style={{
                     marginTop: 20,
                     marginBottom: 20
                 }}>
                     <button style={{
-                        backgroundColor: "#24292E",
-                        padding: 10,
-                        fontSize: "17px",
+                        backgroundColor: "#24292E",                                                
                         color: "white",
-                        border: "none",
-                        boxShadow: "0.5px 0.5px 10px 0px grey"
                     }} onClick={() => {
                         Auth.loginWithGithub(() => {
                             this.props.history.push('/main')
                         })
                     }
-                    }><VscGithub style={{color: "white", fontSize: 25}}/><span style={{marginLeft: "20px"}}/> Login with Github</button>
+                    }><VscGithub style={{color: "white", fontSize: 25}}/><span/> Login with Github</button>
                 </div>
+                <hr />
                 </div>
                 <form onSubmit={e => e.preventDefault()} className="Login-With-Password">
-                    <div className="email container">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="email"/>
+                    <div>
+                        <h5><label for="email">Email</label></h5>
+                        <input type="email" id="email"/>
                     </div>
-                    <div className="password container">
-                        <label for="password">Password</label>
-                        <input type="password" id="email" placeholder="password"/>
+                    <div>
+                        <h5><label for="password">Password</label></h5>
+                        <input type="password" id="email"/>
                     </div>
-                    <input type="submit" value="Login"/>
+                    <input type="submit" value="Continue"/>
                 </form>
                 <p>Don't have a account, <a href="/signup">signup</a></p>
             </div>
