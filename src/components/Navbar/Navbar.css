@@ -1,0 +1,23 @@
+.Navbar {
+    width: auto;
+    display: flex;
+    background-color: #fff5dfa2;
+}
+.Navbar-Image-Container {
+    margin: 5px 0 0 5px;
+}
+.Navbar-Image-Container img {
+    width: 95px;
+}
+.Navbar-Container {
+    width: 100vw;
+    padding: 0 30px 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.Profile-Pic {
+    border-radius: 50%;
+    width: 75px;
+}

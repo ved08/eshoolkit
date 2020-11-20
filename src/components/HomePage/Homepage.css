@@ -1,0 +1,16 @@
+.HomePage {
+    padding: 0;
+}
+.HomePage-title {
+    display: flex;
+    justify-content: space-around;
+}
+.HomePage-title img {
+    margin-top: 30px;
+}
+.HomePage-main-title, .HomePage-content {
+    width: 50vw;
+}
+.HomePage-text {
+    margin-top: 80px;
+}

@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 import axios from "axios";
 import Auth from "../../auth";
 import PopupModal from "../Modal/Modal";
-import Navbar from "./Navbar/Navbar"
+import Navbar from "../Navbar/Navbar";
+import "./LandingPage.css"
 
 export default class LandingPage extends Component {
     state = {
+        authenticated: false,
         name: null,
         email: null,
         uid: null,
         base64Data: null,
-        loading: true
+        loading: true,
+        pf: null
     }
     async componentDidMount () {
         await this.storeAuthStatus()
@@ -27,10 +30,12 @@ export default class LandingPage extends Component {
     storeAuthStatus = async () => {
         const data = await Auth.onAuthStateChanged();
         this.setState({
+            authenticated: true,
             name: data.displayName,
             email: data.email,
             uid: data.uid,
-            showModal: false
+            showModal: false,
+            pf: data.pf 
         })
     }
 
@@ -41,8 +46,8 @@ export default class LandingPage extends Component {
                 width: '140px', height: "75px"
             }} src={uri} key={i}/>)
         return(
-            <div>
-                <Navbar />
+            <div className="LandingPage">
+                <Navbar pf={this.state.pf}/>
                 <h1>Welcome {this.state.name}</h1>
                 <h3>{this.state.email}</h3>
                 <button onClick={() => this.setState({ showModal: true })}>Open Modal</button>

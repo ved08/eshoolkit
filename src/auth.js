@@ -16,10 +16,16 @@ class Auth {
         this.data = {}
     }
     
-    async login(cb) {
+    async loginWithGoogle(cb) {
         const provider = await new firebase.auth.GoogleAuthProvider();
         await firebase.auth().signInWithPopup(provider);
         this.auth = true;
+        cb()
+    }
+    async loginWithGithub(cb) {
+        const provider = await new firebase.auth.GithubAuthProvider();
+        await firebase.auth().signInWithPopup(provider)
+        this.auth = true
         cb()
     }
     logout() {
@@ -31,15 +37,18 @@ class Auth {
     }
     async onAuthStateChanged() {
         let userData = {}
+        
         await firebase.auth().onAuthStateChanged(user => {
             if (user) {
                 let displayName = user.displayName;
                 let email = user.email;
                 let uid = user.uid;
+                let pf = user.photoURL;
                 let data = {
                     displayName,
                     email,
-                    uid
+                    uid,
+                    pf
                 }
                 userData = data;
             }
