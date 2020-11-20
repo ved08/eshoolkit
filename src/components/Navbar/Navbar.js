@@ -11,7 +11,7 @@ const Navbar = (props) => {
               </div>
               <div className="Navbar-Container">
                     <h4>Features</h4>
-                    {props.pf ? <img className="Profile-Pic" src={props.pf}/> : "Login"}
+                    {props.pf ? <img className="Profile-Pic" src={props.pf}/> : <h4>Login</h4>}
               </div>
           </div>
       )
