@@ -17,6 +17,12 @@
     align-items: center;
     border-bottom: 1px solid black;
 }
+.Navbar-Container a {
+    color: black;
+}
+.Navbar-Container a:hover {
+    text-decoration: none;
+}
 .Profile-Pic {
     border-radius: 50%;
     width: 75px;

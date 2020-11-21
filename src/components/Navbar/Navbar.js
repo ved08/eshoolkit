@@ -1,7 +1,6 @@
 import React from "react"
 import "./Navbar.css"
 import logo from "../../eschoolkit-circled(light).jpg"
-import Auth from "../../auth"
 const Navbar = (props) => {
    
        return (
@@ -11,7 +10,10 @@ const Navbar = (props) => {
               </div>
               <div className="Navbar-Container">
                     <h4>Features</h4>
-                    {props.pf ? <img className="Profile-Pic" src={props.pf}/> : <h4>Login</h4>}
+                    {props.pf ?
+                        <img className="Profile-Pic" src={props.pf}/> : 
+                        <h4><a href="/login">Login</a></h4>
+                    }
               </div>
           </div>
       )

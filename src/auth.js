@@ -24,8 +24,10 @@ class Auth {
     }
     async loginWithGithub(cb) {
         const provider = await new firebase.auth.GithubAuthProvider();
-        await firebase.auth().signInWithPopup(provider)
-        this.auth = true
+        await firebase.auth().signInWithPopup(provider).catch(err => {
+            console.log(err.message)
+            err ? this.auth = false : this.auth = true
+        })
         cb()
     }
     logout() {

@@ -12,8 +12,16 @@
     box-shadow: 0.5px 0.5px 10px 0px grey;
     border-radius: 2px;
 }
-.Login hr {
-    margin-top: 40px;
+.Login h6 {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   margin: 45px 0 0;
+}
+.Login h6 span {
+    background:#FFF5DF; 
+    padding:0 10px; 
 }
 .Login span {
     margin-left: 20px;
@@ -26,7 +34,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 .Login form div input {
     width: 280px;
