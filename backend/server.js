@@ -9,6 +9,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json())
 
+// GETing Data
 app.post('/data', (req, res) => {
     console.log("Got a request");
     let bufferData = [];
@@ -30,6 +31,7 @@ app.post('/data', (req, res) => {
         
     })
 })
+// POSTing Data
 app.post('/', (req, res) => {
     console.log(req.body.base64.slice(20, 30))
     let base64Image = req.body.base64.split(';base64,').pop();

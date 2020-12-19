@@ -1,0 +1,16 @@
+.LandingPage h1 {
+    font-weight: bold;
+}
+.LandingPage p {
+    font-size: 30px;
+    font-weight: bold;
+}
+.LandingPage .LandingPage-features {
+    display: flex;
+    height: max-content;
+    justify-content: space-around;
+    align-items: center;
+}
+.LandingPage .LandingPage-features p {
+    font-size: 25px;
+}
